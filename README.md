@@ -77,7 +77,7 @@ bash t-header.sh
 figlet -f pixelfont "T-Header" | lolcat
 ```
 
-![演示预览](https://user-images.githubusercontent.com/demo-placeholder.png) <!-- 如有实际截图请替换 -->
+![演示预览](doc/demo-placeholder.png)
 
 ## 🧙‍♂️ 自定义
 
