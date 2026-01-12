@@ -1,104 +1,104 @@
 ---
 
-# ✨ T-Header: Premium Terminal Branding for Termux
+# ✨ T-Header: Termux 高级终端美化工具
 
 ---
 
-Transform your Termux shell into a personalized, aesthetic command center with **T-Header** — a modular setup featuring custom headers, ZSH themes, logo art, and interactive menus.
+使用 **T-Header** 将您的 Termux shell 转换为个性化的、美观的命令中心 —— 一个包含自定义标题、ZSH 主题、ASCII 艺术标志和交互式菜单的模块化设置。
 
-[🇨🇳 中文版](README_ZH.md)
+[English Version](README_EN.md)
 
-## 🚀 Features
+## 🚀 特性
 
-- 🎨 **Custom Logo & Title**: Display ASCII art logos and figlet-rendered titles with color gradients.
-- 🧠 **Smart ZSH Setup**: Oh-My-Zsh integration with plugin manager and theme selector.
-- 🧩 **Interactive Menus**: Powered by `fzf` and `gum` for intuitive selection.
-- 🛠️ **One-Tap Setup**: Install all dependencies and configure your shell in minutes.
-- 🧾 **Aliases & Enhancements**: Modern replacements for `ls`, `cat`, and more using `eza`, `bat`, `logo-ls`.
+- 🎨 **自定义标志和标题**: 显示 ASCII 艺术标志和 figlet 渲染的标题,支持颜色渐变。
+- 🧠 **智能 ZSH 设置**: 集成 Oh-My-Zsh,提供插件管理器和主题选择器。
+- 🧩 **交互式菜单**: 使用 `fzf` 和 `gum` 提供直观的选择界面。
+- 🛠️ **一键安装**: 几分钟内安装所有依赖项并配置您的 shell。
+- 🧾 **别名和增强**: 使用 `eza`、`bat`、`logo-ls` 等工具替换传统的 `ls`、`cat` 命令。
 
-## Preview of after setup completed..
-![Project Banner](doc/theader.jpg)
+## 安装完成后的预览
+![项目横幅](doc/theader.jpg)
 
 ---
 
-## 📦 Requirements
+## 📦 系统要求
 
-Make sure the following packages are installed:
+确保已安装以下软件包:
 
 ```bash
 pkg install curl fd figlet ruby boxes gum bat logo-ls eza zsh timg fzf
 gem install lolcat
 ```
 
-## 🧑‍💻 Installation
+## 🧑‍💻 安装步骤
 
 1. `apt update && yes | apt upgrade && apt update && apt install git fzf -y`
 2. `git clone https://github.com/remo7777/T-Header.git`
 3. `cd T-Header/`
 4. `ls`
 5. `bash t-header.sh`
-6. after complete all processing just --open new session-- or `source ~/.zshrc`
+6. 完成所有处理后,只需 --打开新会话-- 或运行 `source ~/.zshrc`
 
-This script will:
+此脚本将:
 
-- Install required packages
-- Set up ZSH and Oh-My-Zsh
-- Apply custom fonts and themes
-- Configure `.zshrc`, `.profile`, and `.aliases`
+- 安装所需的软件包
+- 设置 ZSH 和 Oh-My-Zsh
+- 应用自定义字体和主题
+- 配置 `.zshrc`、`.profile` 和 `.aliases`
 
-## 🛠️ Troubleshooting
+## 🛠️ 故障排除
 
-**Termux Force Close Issue**  
-If you're experiencing Termux force closing after installing T-Header:
+**Termux 强制关闭问题**  
+如果在安装 T-Header 后遇到 Termux 强制关闭的问题:
 
-> 🔧 **Fix**:  
-Navigate to the project root directory and run:
+> 🔧 **修复方法**:  
+导航到项目根目录并运行:
 ```bash
 git pull
 bash t-header.sh
 ```
-This will update the files and re-run the setup to resolve any compatibility issues.
+这将更新文件并重新运行安装程序,以解决任何兼容性问题。
 
-## 🧭 Usage
+## 🧭 使用方法
 
-After installation, use the following commands:
+安装完成后,使用以下命令:
 
-| Command     | Description                  |
-|------------|------------------------------|
-| `theader`  | Launch interactive setup     |
-| `clogo`    | Change logo                  |
-| `ctitle`   | Set custom header title      |
-| `ctpro`    | Switch `termux.properties`   |
-| `cztheme`  | Change ZSH theme             |
+| 命令      | 描述                      |
+|----------|--------------------------|
+| `theader` | 启动交互式设置            |
+| `clogo`   | 更改标志                  |
+| `ctitle`  | 设置自定义标题            |
+| `ctpro`   | 切换 `termux.properties`  |
+| `cztheme` | 更改 ZSH 主题             |
 
-## 🖼️ Preview
+## 🖼️ 预览
 
 ```bash
 figlet -f pixelfont "T-Header" | lolcat
 ```
 
-![Demo Preview](https://user-images.githubusercontent.com/demo-placeholder.png) <!-- Replace with actual screenshot if available -->
+![演示预览](https://user-images.githubusercontent.com/demo-placeholder.png) <!-- 如有实际截图请替换 -->
 
-## 🧙‍♂️ Customization
+## 🧙‍♂️ 自定义
 
-- Logos stored in `~/.config/theader/logo`
-- Themes in `~/.oh-my-zsh/custom/themes`
-- Config file: `~/.config/theader/theader.cfg`
+- 标志存储在 `~/.config/theader/logo`
+- 主题在 `~/.oh-my-zsh/custom/themes`
+- 配置文件: `~/.config/theader/theader.cfg`
 
-You can edit these manually or use the interactive menu.
+您可以手动编辑这些文件,或使用交互式菜单。
 
-### Widgets (ZSH)
-- `Alt+T`: Insert file path
-- `Alt+C`: Change directory
-- `Ctrl+R`: Search history
+### 快捷键 (ZSH)
+- `Alt+T`: 插入文件路径
+- `Alt+C`: 更改目录
+- `Ctrl+R`: 搜索历史记录
 
-## 🧼 Uninstall
+## 🧼 卸载
 
 ```bash
 rm -rf ~/.config/theader ~/.oh-my-zsh ~/.zshrc ~/.profile ~/.aliases
 ```
 
-## 📜 License
+## 📜 许可证
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
