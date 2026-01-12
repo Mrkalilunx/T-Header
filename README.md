@@ -1,4 +1,3 @@
-
 ---
 
 # ✨ T-Header: Premium Terminal Branding for Termux
@@ -6,6 +5,9 @@
 ---
 
 Transform your Termux shell into a personalized, aesthetic command center with **T-Header** — a modular setup featuring custom headers, ZSH themes, logo art, and interactive menus.
+
+[🇨🇳 中文版](README_ZH.md)
+
 ## 🚀 Features
 
 - 🎨 **Custom Logo & Title**: Display ASCII art logos and figlet-rendered titles with color gradients.
@@ -107,4 +109,3 @@ rm -rf ~/.config/theader ~/.oh-my-zsh ~/.zshrc ~/.profile ~/.aliases
 [![Wiki](https://img.shields.io/badge/wiki-home-green.svg)](https://github.com/remo7777/T-Header/wiki)
 
 ---
-

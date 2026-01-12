@@ -63,12 +63,21 @@ install_packages() {
 
   # Download custom figlet font (pixelfont)
   FONT_PATH="$PREFIX/share/figlet/pixelfont.flf"
+  LOCAL_FONT="$SCRIPT_DIR/termux/pixelfont.flf"
+
   if [[ ! -f "$FONT_PATH" ]]; then
-    echo "[➕] Downloading pixelfont.flf ..."
-    curl -L \
-      https://raw.githubusercontent.com/imegeek/figlet-fonts/master/pixelfont.flf \
-      -o "$FONT_PATH"
-    echo "[✔] Font saved to $FONT_PATH"
+    if [[ -f "$LOCAL_FONT" ]]; then
+      echo "[➕] Using local pixelfont.flf ..."
+      mkdir -p "$PREFIX/share/figlet"
+      cp "$LOCAL_FONT" "$FONT_PATH"
+      echo "[✔] Font saved to $FONT_PATH"
+    else
+      echo "[➕] Downloading pixelfont.flf ..."
+      curl -L \
+        https://raw.githubusercontent.com/imegeek/figlet-fonts/master/pixelfont.flf \
+        -o "$FONT_PATH"
+      echo "[✔] Font saved to $FONT_PATH"
+    fi
   else
     echo "[✔] pixelfont.flf already exists"
   fi
@@ -78,9 +87,15 @@ install_packages() {
   FONT_DIR="$HOME/.termux"
   mkdir -p "$FONT_DIR"
   TMPDIR=$(mktemp -d)
+  LOCAL_ZIP="$SCRIPT_DIR/termux/UbuntuMono.zip"
 
-  echo "[➕] Downloading Nerd Font (UbuntuMono)..."
-  curl -L "$nerdflink" -o "$TMPDIR/UbuntuMono.zip"
+  if [[ -f "$LOCAL_ZIP" ]]; then
+    echo "[➕] Using local UbuntuMono.zip ..."
+    cp "$LOCAL_ZIP" "$TMPDIR/UbuntuMono.zip"
+  else
+    echo "[➕] Downloading Nerd Font (UbuntuMono)..."
+    curl -L "$nerdflink" -o "$TMPDIR/UbuntuMono.zip"
+  fi
 
   echo "[🎨] Installing Nerd Font to $FONT_DIR/font.ttf ..."
   unzip -p "$TMPDIR/UbuntuMono.zip" "UbuntuMonoNerdFontMono-Regular.ttf" >"$FONT_DIR/font.ttf"
